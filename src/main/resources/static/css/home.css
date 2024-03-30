@@ -1,0 +1,10 @@
+body{
+    background-color: antiquewhite;
+}
+h1{
+    text-align: center;
+    color: red;
+    text-shadow:5px 5px 5px yellow;
+    font-size: 100px;
+    font-style: italic;
+}

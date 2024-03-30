@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    color: red;
+    text-shadow:5px 5px 5px yellow;
+    font-size: 100px;
+    font-style: italic;
+}
+form{
+    /* text-align: center; */
+    width: 50%;
+    background-color: yellow;
+    box-shadow: 5px 0px 10px 5px red;
+}
+fieldset{
+    border: yellow;
+}
+legend{
+    text-align: center;
+    font-style: italic;
+    color: red;
+}
