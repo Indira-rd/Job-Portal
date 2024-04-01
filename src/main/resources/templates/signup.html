@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/signup.css">
 </head>
 <body>
-    <form action="/signup" method="post">
-        <fieldset>
-            <legend>signup page</legend>
-            <h1 th:text="${msg}"></h1>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <br><br>
-            <label for="mobile">Mobile Number:</label>
-            <input type="text" id="mobile" name="mobile">
-            <br><br>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob">
-            <br><br>
-            <label for="pass">Password:</label>
-            <input type="password" id="pass" name="password">
-            <br><br>
-            <label for="conpass">Confirm Password:</label>
-            <input type="password" id="conpass" name="confirm_password">
-            <br><br>
-            <label for="role">Role:</label>
-            <input type="radio" name="role" id="role" value="applicant">Applicant
-            <input type="radio" name="role" id="role" value="recruiter">Recruiter
-            <br><br>
-            <button>Signup</button>
-        </fieldset>
-    </form>
+    <h1>Please enter the below details</h1>
+    <center>
+        <form action="/signup" method="post" th:object="${portalUser}">
+            <fieldset>
+                <legend>signup page</legend>
+                <h1 th:text="${msg}"></h1>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" th:field="*{name}"><span th:errors="*{name}"></span>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:field="*{email}"><span th:errors="*{email}"></span>
+                <br><br>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" th:field="*{mobile}"><span th:errors="*{mobile}"></span>
+                <br><br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required="required" name="dob" th:field="*{dob}"><span th:errors="*{dob}"></span>
+                <br><br>
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="password"><span th:errors="*{password}"></span>
+                <br><br>
+                <label for="conpass">Confirm Password:</label>
+                <input type="password" id="conpass" name="confirm_password"><span th:errors="*{confirm_password}"></span>
+                <br><br>
+                <label for="role">Role:</label>
+                <input type="radio" name="role" id="role" value="applicant" th:field="*{role}">Applicant
+                <input type="radio" name="role" id="role" value="recruiter" th:field="*{role}">Recruiter
+                <!-- <span th:errors="*{role}"></span> -->
+    
+                <br><br>
+                <button>Signup</button>
+            </fieldset>
+        </form>
+    </center>
 </body>
 </html>
